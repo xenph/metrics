@@ -5,19 +5,19 @@ class Metrics {
 	protected static $reporters = array();
 	
 	static function meter($key) {
-		return $this->reporters[$key]->meter();
+		return self::$reporters[$key]->meter();
 	}
 	
 	static function counter($key) {
-		return $this->reporters[$key]->counter();
+		return self::$reporters[$key]->counter();
 	}
 	
 	static function timer($key) {
-		return $this->reporters[$key]->timer();
+		return self::$reporters[$key]->timer();
 	}
 	
 	static function event($key) {
-		return $this->reporters[$key]->event();
+		return self::$reporters[$key]->event();
 	}
 	
 	static function reporter($key_mask) {
@@ -25,7 +25,7 @@ class Metrics {
 	}
 	
 	static function saveReporter($key_mask, $reporter) {
-		$this->reporters[$key_mask] = $reporter;
+		self::$reporters[$key_mask] = $reporter;
 		return $reporter;
 	}
 }

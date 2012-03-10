@@ -1,4 +1,5 @@
 <?php
+require_once('StatsDReporter.php');
 class Reporter {
 	protected $_key_mask;
 	

@@ -25,7 +25,7 @@ Events
 ------
 Events mark the occurance of a particular state in the application.
 
-`Metrics::event('totango.event')->mark();
+`Metrics::event('totango.event')->mark();`
 
 Reporters
 ---------
