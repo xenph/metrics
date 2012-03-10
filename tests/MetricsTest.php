@@ -12,6 +12,16 @@ class MetricsTest extends PHPUnit_Framework_Testcase {
 		Metrics::counter('foo');
 	}
 	
+	public function testCounterIncrementExists() {
+		Metrics::reporter('foo')->statsd();
+		Metrics::counter('foo')->increment(array('sampleRate' => 1));
+	}
+	
+	public function testCounterDecrementExists() {
+		Metrics::reporter('foo')->statsd();
+		Metrics::counter('foo')->decrement(array('sampleRate' => 1));
+	}
+	
 	public function testTimerExists() {
 		Metrics::reporter('foo')->statsd();
 		Metrics::timer('foo');
