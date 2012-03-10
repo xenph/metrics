@@ -5,19 +5,19 @@ class Metrics {
 	protected static $reporters = array();
 	
 	static function meter($key) {
-		return self::$reporters[$key]->meter();
+		return self::$reporters[$key]->meter($key);
 	}
 	
 	static function counter($key) {
-		return self::$reporters[$key]->counter();
+		return self::$reporters[$key]->counter($key);
 	}
 	
 	static function timer($key) {
-		return self::$reporters[$key]->timer();
+		return self::$reporters[$key]->timer($key);
 	}
 	
 	static function event($key) {
-		return self::$reporters[$key]->event();
+		return self::$reporters[$key]->event($key);
 	}
 	
 	static function reporter($key_mask) {

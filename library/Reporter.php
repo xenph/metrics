@@ -9,7 +9,7 @@ class Reporter {
 		$this->_key_mask = $key_mask;
 	}
 	
-	function stdout() {
+	function stdout($options = array()) {
 		return Metrics::saveReporter($this->_key_mask, new StdOutReporter($options));
 	}
 	

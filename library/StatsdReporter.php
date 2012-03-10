@@ -1,28 +1,40 @@
 <?php
 class StatsDReporter {
-	function meter() {
-		return new StatsDMeter();
+	function meter($key) {
+		return new StatsDMeter($key);
 	}
 	
-	function counter() {
-		return new StatsDCounter();
+	function counter($key) {
+		return new StatsDCounter($key);
 	}
 	
-	function timer() {
-		return new StatsDTimer();
+	function timer($key) {
+		return new StatsDTimer($key);
 	}
 	
-	function event() {
-		return new StatsDEvent();
+	function event($key) {
+		return new StatsDEvent($key);
 	}	
 }
 
 class StatsDMeter {
+	protected $key;
+	
+	function __construct($key) {
+		$this->key = $key;
+	}
+	
 	function mark($options) {
 	}
 }
 
 class StatsDCounter {
+	protected $key;
+	
+	function __construct($key) {
+		$this->key = $key;
+	}
+	
 	function increment($options) {
 	}
 	
@@ -31,6 +43,12 @@ class StatsDCounter {
 }
 
 class StatsDTimer {
+	protected $key;
+	
+	function __construct($key) {
+		$this->key = $key;
+	}
+	
 	function time($options) {
 	}
 	
@@ -39,6 +57,12 @@ class StatsDTimer {
 }
 
 class StatsDEvent {
+	protected $key;
+	
+	function __construct($key) {
+		$this->key = $key;
+	}
+	
 	function mark($options) {
 	}
 }
