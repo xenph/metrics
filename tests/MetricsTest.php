@@ -18,6 +18,8 @@ class MetricsTest extends PHPUnit_Framework_Testcase {
 		Metrics::event('foo');
 	}
 	
+	
+	
 	public function testCanCreateStatsDReporterWithDefaults() {
 		Metrics::reporter('test')->statsd();
 	}
