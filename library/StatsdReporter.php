@@ -33,6 +33,7 @@ class StatsDCounter {
 class StatsDTimer {
 	function time($options) {
 	}
+	
 	function stop($options) {
 	}
 }
