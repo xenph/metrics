@@ -1,44 +1,50 @@
 <?php
-class StatsDReporter {
+class StdOutReporter {
 	function meter() {
-		return new StatsDMeter();
+		return new StdOutMeter();
 	}
 	
 	function counter() {
-		return new StatsDCounter();
+		return new StdOutCounter();
 	}
 	
 	function timer() {
-		return new StatsDTimer();
+		return new StdOutTimer();
 	}
 	
 	function event() {
-		return new StatsDEvent();
+		return new StdOutEvent();
 	}	
 }
 
-class StatsDMeter {
+class StdOutMeter {
 	function mark($options) {
+		echo 'Meter: Mark!';
 	}
 }
 
-class StatsDCounter {
+class StdOutCounter {
 	function increment($options) {
+		echo 'Counter: Increment!';
 	}
 	
 	function decrement($options) {
+		echo 'Counter: Decrement!';
 	}
 }
 
-class StatsDTimer {
+class StdOutTimer {
 	function time($options) {
+		echo 'Timer: Start!';
 	}
 	
 	function stop($options) {
+		echo 'Timer: Stop!';
 	}
 }
 
-class StatsDEvent {
+class StdOutEvent {
 	function mark($options) {
+		echo 'Event: Mark!';
 	}
 }
