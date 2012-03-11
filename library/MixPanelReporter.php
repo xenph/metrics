@@ -34,15 +34,7 @@ class MixPanelMeter {
 	}
 	
 	function mark($options = array()) {
-		$params = array(
-            'event' => $this->key,
-            'properties' => $options
-        );
-		if (!isset($params['properties']['token'])){
-            $params['properties']['token'] = $this->reporter->options['token'];
-        }
-		$url = MixPanelReporter::$api_url . base64_encode(json_encode($params));
-        exec("curl '" . $url . "' >/dev/null 2>&1 &");
+		echo "Meter: Mark! Key: $this->key";
 	}
 }
 
@@ -91,7 +83,15 @@ class MixPanelEvent {
 		$this->reporter = $reporter;
 	}
 	
-	function mark($options) {
-		echo "Event: Mark! Key: $this->key";
+	function mark($options = array()) {
+		$params = array(
+            'event' => $this->key,
+            'properties' => $options
+        );
+		if (!isset($params['properties']['token'])){
+            $params['properties']['token'] = $this->reporter->options['token'];
+        }
+		$url = MixPanelReporter::$api_url . base64_encode(json_encode($params));
+        exec("curl '" . $url . "' >/dev/null 2>&1 &");
 	}
 }
