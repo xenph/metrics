@@ -1,7 +1,7 @@
 <?php
-require_once('StatsDReporter.php');
-require_once('StdOutReporter.php');
-require_once('MixPanelReporter.php');
+require_once('reporters/StatsDReporter.php');
+require_once('reporters/StdOutReporter.php');
+require_once('reporters/MixPanelReporter.php');
 
 class Reporter {
 	protected $_key_mask;
