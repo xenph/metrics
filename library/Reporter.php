@@ -1,12 +1,17 @@
 <?php
 require_once('StatsDReporter.php');
 require_once('StdOutReporter.php');
+require_once('MixPanelReporter.php');
 
 class Reporter {
 	protected $_key_mask;
 	
 	function __construct($key_mask) {
 		$this->_key_mask = $key_mask;
+	}
+	
+	function mixpanel($options = array()) {
+		return Metrics::saveReporter($this->_key_mask, new MixPanelReporter($options));
 	}
 	
 	function stdout($options = array()) {
