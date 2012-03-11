@@ -34,4 +34,4 @@ Reporters are how the application saves the metric information, they use a wildc
 `Metrics::reporter('sales.*')->statsd(array('host' => 'sales-stats.bigcommerce.com', 'port' => 3317));`
 `Metrics::reporter('hits.*')->statsd(array('host' => 'localhost', 'port' => 3317));`
 `Metrics::reporter('totango-*')->totango(array('account_id' => 'test', 'token' => 'abc123'));`
-`Metrics::reporter('mixpanel.*')->totango(array('token' => 'abc123'));`
+`Metrics::reporter('mixpanel.*')->mixpanel(array('token' => 'abc123'));`
