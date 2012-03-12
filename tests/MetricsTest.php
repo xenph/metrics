@@ -3,6 +3,10 @@ require_once('../library/Metrics.php');
 
 class MetricsTest extends PHPUnit_Framework_Testcase {
 	
+	public function testCanCreateStdOutReporterWithDefaults() {
+		Metrics::reporter('foo')->stdout();
+	}
+	
 	public function testCanCreateStatsDReporterWithDefaults() {
 		Metrics::reporter('foo')->statsd();
 	}
