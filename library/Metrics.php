@@ -1,5 +1,4 @@
 <?php
-namespace metrics;
 
 require_once('Reporter.php');
 
@@ -39,7 +38,7 @@ class Metrics {
 	}
 	
 	static function reporter($key_mask) {
-		return new Reporter($key_mask);
+		return new \metrics\Reporter($key_mask);
 	}
 	
 	static function saveReporter($key_mask, $reporter) {

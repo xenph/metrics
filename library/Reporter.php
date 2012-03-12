@@ -13,18 +13,18 @@ class Reporter {
 	}
 	
 	function mixpanel($options = array()) {
-		return Metrics::saveReporter($this->_key_mask, new reporters\MixPanel($options));
+		return \Metrics::saveReporter($this->_key_mask, new reporters\MixPanel($options));
 	}
 	
 	function stdout($options = array()) {
-		return Metrics::saveReporter($this->_key_mask, new reporters\StdOut($options));
+		return \Metrics::saveReporter($this->_key_mask, new reporters\StdOut($options));
 	}
 	
 	function statsd($options = array('host' => 'localhost', 'port' => 1111)) {
-		return Metrics::saveReporter($this->_key_mask, new reporters\StatsD($options));
+		return \Metrics::saveReporter($this->_key_mask, new reporters\StatsD($options));
 	}
 	
 	function totango($options = array('host' => 'localhost')) {
-		return Metrics::saveReporter($this->_key_mask, new reporters\ToTango($options));
+		return \Metrics::saveReporter($this->_key_mask, new reporters\ToTango($options));
 	}
 }
