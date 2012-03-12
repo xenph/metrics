@@ -3,23 +3,25 @@ namespace metrics\reporters;
 
 class StdOut {
 	function meter($key) {
-		return new StdOutMeter($key);
+		return new stdout\Meter($key);
 	}
 	
 	function counter($key) {
-		return new StdOutCounter($key);
+		return new stdout\Counter($key);
 	}
 	
 	function timer($key) {
-		return new StdOutTimer($key);
+		return new stdout\Timer($key);
 	}
 	
 	function event($key) {
-		return new StdOutEvent($key);
+		return new stdout\Event($key);
 	}	
 }
 
-class StdOutMeter {
+namespace metrics\reporters\stdout;
+
+class Meter {
 	protected $key;
 	
 	function __construct($key) {
@@ -31,7 +33,7 @@ class StdOutMeter {
 	}
 }
 
-class StdOutCounter {
+class Counter {
 	protected $key;
 	
 	function __construct($key) {
@@ -47,7 +49,7 @@ class StdOutCounter {
 	}
 }
 
-class StdOutTimer {
+class Timer {
 	protected $key;
 	
 	function __construct($key) {
@@ -63,7 +65,7 @@ class StdOutTimer {
 	}
 }
 
-class StdOutEvent {
+class Event {
 	protected $key;
 	
 	function __construct($key) {

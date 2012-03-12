@@ -2,7 +2,6 @@
 namespace metrics\reporters;
 
 class MixPanel {
-	public static $api_url = 'http://api.mixpanel.com/track/?data=';
 	public $options;
 	
 	function __construct($options) {
@@ -22,11 +21,13 @@ class MixPanel {
 	}
 	
 	function event($key) {
-		return new MixPanelEvent($key, $this);
+		return new mixpanel\Event($key, $this);
 	}	
 }
 
-class MixPanelEvent {
+namespace metrics\reporters\mixpanel;
+
+class Event {
 	protected $key;
 	protected $reporter;
 	
@@ -43,7 +44,7 @@ class MixPanelEvent {
 		if (!isset($params['properties']['token'])){
             $params['properties']['token'] = $this->reporter->options['token'];
         }
-		$url = MixPanelReporter::$api_url . base64_encode(json_encode($params));
+		$url = 'http://api.mixpanel.com/track/?data=' . base64_encode(json_encode($params));
         exec("curl '" . $url . "' >/dev/null 2>&1 &");
 	}
 }

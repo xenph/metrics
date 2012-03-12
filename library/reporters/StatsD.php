@@ -3,23 +3,25 @@ namespace metrics\reporters;
 
 class StatsD {
 	function meter($key) {
-		return new StatsDMeter($key);
+		return new statsd\Meter($key);
 	}
 	
 	function counter($key) {
-		return new StatsDCounter($key);
+		return new statsd\Counter($key);
 	}
 	
 	function timer($key) {
-		return new StatsDTimer($key);
+		return new statsd\Timer($key);
 	}
 	
 	function event($key) {
-		return new StatsDEvent($key);
+		return new statsd\Event($key);
 	}	
 }
 
-class StatsDMeter {
+namespace metrics\reporters\statsd;
+
+class Meter {
 	protected $key;
 	
 	function __construct($key) {
@@ -30,7 +32,7 @@ class StatsDMeter {
 	}
 }
 
-class StatsDCounter {
+class Counter {
 	protected $key;
 	
 	function __construct($key) {
@@ -44,7 +46,7 @@ class StatsDCounter {
 	}
 }
 
-class StatsDTimer {
+class Timer {
 	protected $key;
 	
 	function __construct($key) {
@@ -58,7 +60,7 @@ class StatsDTimer {
 	}
 }
 
-class StatsDEvent {
+class Event {
 	protected $key;
 	
 	function __construct($key) {
