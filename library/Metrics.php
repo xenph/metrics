@@ -8,7 +8,7 @@ class Metrics {
 	static function meter($key) {
 		$result = self::findMatchingKeyMask($key);
 		if (!$result) {
-			return false;
+			throw new InvalidArgumentException('No reporter found.');
 		}
 		return self::$reporters[$result['key_mask']]->meter($result['matchedKey']);
 	}
@@ -16,7 +16,7 @@ class Metrics {
 	static function counter($key) {
 		$result = self::findMatchingKeyMask($key);
 		if (!$result) {
-			return false;
+			throw new InvalidArgumentException('No reporter found.');
 		}
 		return self::$reporters[$result['key_mask']]->counter($result['matchedKey']);
 	}
@@ -24,7 +24,7 @@ class Metrics {
 	static function timer($key) {
 		$result = self::findMatchingKeyMask($key);
 		if (!$result) {
-			return false;
+			throw new InvalidArgumentException('No reporter found.');
 		}
 		return self::$reporters[$result['key_mask']]->timer($result['matchedKey']);
 	}
@@ -32,7 +32,7 @@ class Metrics {
 	static function event($key) {
 		$result = self::findMatchingKeyMask($key);
 		if (!$result) {
-			return false;
+			throw new InvalidArgumentException('No reporter found.');
 		}
 		return self::$reporters[$result['key_mask']]->event($result['matchedKey']);
 	}
