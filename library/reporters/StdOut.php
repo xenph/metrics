@@ -1,5 +1,7 @@
 <?php
-class StdOutReporter {
+namespace metrics\reporters;
+
+class StdOut {
 	function meter($key) {
 		return new StdOutMeter($key);
 	}

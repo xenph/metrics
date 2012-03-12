@@ -1,7 +1,9 @@
 <?php
+namespace metrics;
+
 require_once('../library/Metrics.php');
 
-class MetricsTest extends PHPUnit_Framework_Testcase {
+class MetricsTest extends \PHPUnit_Framework_Testcase {
 	
 	public function testCanCreateStdOutReporterWithDefaults() {
 		Metrics::reporter('foo')->stdout();

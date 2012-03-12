@@ -1,5 +1,7 @@
 <?php
-class StatsDReporter {
+namespace metrics\reporters;
+
+class StatsD {
 	function meter($key) {
 		return new StatsDMeter($key);
 	}

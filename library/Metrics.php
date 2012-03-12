@@ -1,4 +1,6 @@
 <?php
+namespace metrics;
+
 require_once('Reporter.php');
 
 class Metrics {

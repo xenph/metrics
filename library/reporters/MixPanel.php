@@ -1,5 +1,7 @@
 <?php
-class MixPanelReporter {
+namespace metrics\reporters;
+
+class MixPanel {
 	public static $api_url = 'http://api.mixpanel.com/track/?data=';
 	public $options;
 	
