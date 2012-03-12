@@ -7,19 +7,35 @@ class Metrics {
 	protected static $reporters = array();
 	
 	static function meter($key) {
-		return self::$reporters[$key]->meter($key);
+		$result = self::findMatchingKeyMask($key);
+		if (!$result) {
+			return false;
+		}
+		return self::$reporters[$result['key_mask']]->meter($result['matchedKey']);
 	}
 	
 	static function counter($key) {
-		return self::$reporters[$key]->counter($key);
+		$result = self::findMatchingKeyMask($key);
+		if (!$result) {
+			return false;
+		}
+		return self::$reporters[$result['key_mask']]->counter($result['matchedKey']);
 	}
 	
 	static function timer($key) {
-		return self::$reporters[$key]->timer($key);
+		$result = self::findMatchingKeyMask($key);
+		if (!$result) {
+			return false;
+		}
+		return self::$reporters[$result['key_mask']]->timer($result['matchedKey']);
 	}
 	
 	static function event($key) {
-		return self::$reporters[$key]->event($key);
+		$result = self::findMatchingKeyMask($key);
+		if (!$result) {
+			return false;
+		}
+		return self::$reporters[$result['key_mask']]->event($result['matchedKey']);
 	}
 	
 	static function reporter($key_mask) {
@@ -29,5 +45,14 @@ class Metrics {
 	static function saveReporter($key_mask, $reporter) {
 		self::$reporters[$key_mask] = $reporter;
 		return $reporter;
+	}
+	
+	private static function findMatchingKeyMask($key) {
+		foreach (self::$reporters as $regex => $reporter) {
+			if (preg_match('/' . $regex . '/', $key, $matches)) {
+				return array('matchedKey' => $matches[sizeof($matches) - 1], 'key_mask' => $regex);
+			}
+		}
+		return false;
 	}
 }
