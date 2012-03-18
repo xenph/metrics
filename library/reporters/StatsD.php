@@ -1,7 +1,12 @@
 <?php
 namespace metrics\reporters;
 
-class StatsD
+require_once("./statsd/Counter.php");
+require_once("./statsd/Meter.php");
+require_once("./statsd/Timer.php");
+require_once("./statsd/Event.php");
+
+class StatsD implements IMetrics
 {
     public function meter($key)
     {
@@ -16,5 +21,10 @@ class StatsD
     public function timer($key)
     {
         return new statsd\Timer($key);
+    }
+
+    public function event($key)
+    {
+        return new statsd\Event($key);
     }
 }

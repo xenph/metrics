@@ -1,7 +1,9 @@
 <?php
 namespace metrics\reporters;
 
-class MixPanel
+require_once("./mixpanel/Event.php");
+
+class MixPanel implements IMetrics
 {
     public $options;
 
@@ -10,23 +12,23 @@ class MixPanel
         $this->options = $options;
     }
 
+    public function event($key)
+    {
+        return new mixpanel\Event($key, $this);
+    }
+
     public function meter($key)
     {
-        throw new Exception('The meter function isn\'t implemented for the MixPanel reporter.');
+        // TODO: Implement meter() method.
     }
 
     public function counter($key)
     {
-        throw new Exception('The counter function isn\'t implemented for the MixPanel reporter.');
+        // TODO: Implement counter() method.
     }
 
     public function timer($key)
     {
-        throw new Exception('The timer function isn\'t implemented for the MixPanel reporter.');
-    }
-
-    public function event($key)
-    {
-        return new mixpanel\Event($key, $this);
+        // TODO: Implement timer() method.
     }
 }
