@@ -3,6 +3,8 @@ Metrics
 
 Metrics is a simple metrics library for PHP, with reporters for both StatsD, MixPanel and ToTango.
 
+[![Build Status](https://secure.travis-ci.org/xenph/Metrics.png?branch=master)](http://travis-ci.org/xenph/Metrics)
+
 Meters
 ------
 Meters measure the calls per second.
