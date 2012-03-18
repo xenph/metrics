@@ -1,7 +1,7 @@
 <?php
 namespace metrics\reporters;
 
-class MongoDB implements \metrics\reports\IMetrics
+class MongoDB implements IMetrics
 {
     private $mongo;
     private $db;
@@ -19,22 +19,22 @@ class MongoDB implements \metrics\reports\IMetrics
 
     public function meter($key)
     {
-
+        // @TODO: Implement event() method.
     }
 
     public function counter($key)
     {
-
+        // @TODO: Implement event() method.
     }
 
     public function timer($key)
     {
-
+        // @TODO: Implement event() method.
     }
 
     public function event($key)
     {
-        // TODO: Implement event() method.
+        // @TODO: Implement event() method.
     }
 
     private function write($data)
