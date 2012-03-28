@@ -24,12 +24,12 @@ class Reporter
         return \Metrics::saveReporter($this->_key_mask, new reporters\StdOut($options));
     }
 
-    public function statsd($options = array('host' => 'localhost', 'port' => 1111))
+    public function statsd($options = array())
     {
         return \Metrics::saveReporter($this->_key_mask, new reporters\StatsD($options));
     }
 
-    public function totango($options = array('host' => 'localhost'))
+    public function totango($options = array())
     {
         return \Metrics::saveReporter($this->_key_mask, new reporters\ToTango($options));
     }

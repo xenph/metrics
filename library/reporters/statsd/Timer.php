@@ -3,18 +3,20 @@ namespace metrics\reporters\statsd;
 
 class Timer
 {
-    protected $key;
+	private $key;
+	private $statsDConnection;
 
-    public function __construct($key)
+    public function __construct($key, $connection)
     {
         $this->key = $key;
+		$this->statsDConnection = $connection;
     }
 
-    public function time($options = array())
+    public function time($options = array(), $callback)
     {
-    }
-
-    public function stop($options = array())
-    {
+		$this->statsDConnection->time_this($this->key, function() 
+		{
+			callback();
+		});
     }
 }
