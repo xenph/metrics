@@ -1,6 +1,6 @@
 Reporters
 =========
-Reporters are how the events are proporgated into other systems and eventually reported to the user.
+Reporters are how the events are propagated into other systems and eventually reported to the user.
 
 MixPanel
 --------
