@@ -1,6 +1,7 @@
 <?php
 namespace metrics\reporters;
-require_once("./mixpanel/Event.php");
+require_once("Reportable.php");
+require_once("mixpanel/Event.php");
 
 class MixPanel implements Reportable
 {

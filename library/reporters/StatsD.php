@@ -1,9 +1,10 @@
 <?php
 namespace metrics\reporters;
-require_once("./statsd/Counter.php");
-require_once("./statsd/Meter.php");
-require_once("./statsd/Timer.php");
-require_once("./statsd/Event.php");
+require_once("Reportable.php");
+require_once("statsd/Counter.php");
+require_once("statsd/Meter.php");
+require_once("statsd/Timer.php");
+require_once("statsd/Event.php");
 
 class StatsD implements Reportable
 {
