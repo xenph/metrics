@@ -1,7 +1,8 @@
 <?php
 namespace metrics\reporters;
+require_once("./mixpanel/Event.php");
 
-class MixPanel
+class MixPanel implements Reportable
 {
     public $options;
 
