@@ -10,7 +10,7 @@ class Meter
         $this->key = $key;
     }
 
-    public function mark($options)
+    public function mark($options = array())
     {
     }
 }

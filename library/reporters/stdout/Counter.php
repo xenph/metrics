@@ -10,12 +10,12 @@ class Counter
         $this->key = $key;
     }
 
-    function increment($options)
+    function increment($options = array())
     {
         echo "Counter: Increment! Key: $this->key";
     }
 
-    function decrement($options)
+    function decrement($options = array())
     {
         echo "Counter: Decrement! Key: $this->key";
     }

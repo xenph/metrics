@@ -10,11 +10,11 @@ class Timer
         $this->key = $key;
     }
 
-    public function time($options)
+    public function time($options = array())
     {
     }
 
-    public function stop($options)
+    public function stop($options = array())
     {
     }
 }

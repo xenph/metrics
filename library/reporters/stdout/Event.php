@@ -10,7 +10,7 @@ class Event
         $this->key = $key;
     }
 
-    function mark($options)
+    function mark($options = array())
     {
         echo "Event: Mark! Key: $this->key";
     }

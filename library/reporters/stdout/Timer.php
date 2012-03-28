@@ -10,12 +10,12 @@ class Timer
         $this->key = $key;
     }
 
-    function time($options)
+    function time($options = array())
     {
         echo "Timer: Start! Key: $this->key";
     }
 
-    function stop($options)
+    function stop($options = array())
     {
         echo "Timer: Stop! Key: $this->key";
     }

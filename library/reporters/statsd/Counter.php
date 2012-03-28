@@ -10,11 +10,11 @@ class Counter
         $this->key = $key;
     }
 
-    public function increment($options)
+    public function increment($options = array())
     {
     }
 
-    public function decrement($options)
+    public function decrement($options = array())
     {
     }
 }
