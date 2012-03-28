@@ -1,7 +1,8 @@
 <?php
 namespace metrics\reporters;
+require_once("Reportable.php")
 
-class MongoDB implements IMetrics
+class MongoDB implements Reportable
 {
     private $mongo;
     private $db;
