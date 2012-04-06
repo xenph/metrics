@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.8.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Metrics</name>
+ <uri>xenph.github.com/Metrics</uri>
+ <summary>A simple metrics library for PHP.</summary>
+ <description>Metrics is a simple metrics library for PHP, with reporters for both StatsD, MixPanel and ToTango.</description>
+ <lead>
+  <name>xenph</name>
+  <user>xenph</user>
+  <email>xenph@users.github.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2012-04-06</date>
+ <time>16:00:00</time>
+ <version>
+  <release>0.0.1</release>
+  <api>0.0.1</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/mit-license.php">MIT</license>
+ <notes>-</notes>
+ <contents>
+   <dir name="/">
+	 <dir name="metrics">
+     	<file name="Metrics.php" role="php"/>
+	 	<file name="Reporter.php" role="php"/>
+	 	<dir name="reporters">
+			<dir name="mixpanel">
+				<file name="Event.php" role="php"/>
+			</dir>
+			<file name="MixPanel.php" role="php"/>
+			<file name="MongoDB.php" role="php"/>
+			
+			<file name="Reportable.php" role="php"/>
+			<dir name="statsd">
+				<file name="Counter.php" role="php"/>
+				<file name="Event.php" role="php"/>
+				<file name="Meter.php" role="php"/>
+				<file name="Timer.php" role="php"/>
+			</dir>
+			<file name="StatsD.php" role="php"/>
+			<dir name="stdout">
+				<file name="Counter.php" role="php"/>
+				<file name="Event.php" role="php"/>
+				<file name="Meter.php" role="php"/>
+				<file name="Timer.php" role="php"/>
+			</dir>
+			<file name="StdOut.php" role="php"/>
+	 	</dir>
+	  </dir>
+   </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.3.1</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+</package>
