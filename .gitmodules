@@ -1,6 +1,0 @@
-[submodule "externals/php-statsd"]
-	path = externals/php-statsd
-	url = https://github.com/seejohnrun/php-statsd.git
-[submodule "library/externals/php-statsd"]
-	path = library/externals/php-statsd
-	url = https://github.com/seejohnrun/php-statsd.git

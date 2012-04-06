@@ -1,6 +1,6 @@
 <?php
 
-require_once('library/Metrics.php');
+require_once('metrics/Metrics.php');
 
 class MetricsTest extends PHPUnit_Framework_Testcase {
 	
