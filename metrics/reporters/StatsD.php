@@ -1,7 +1,7 @@
 <?php
 namespace metrics\reporters;
 require_once("Reportable.php");
-require_once(dirname(__FILE__)."/../externals/php-statsd/libraries/statsd.php");
+require_once("statsd/Connection.php");
 require_once("statsd/Counter.php");
 require_once("statsd/Meter.php");
 require_once("statsd/Timer.php");
@@ -19,7 +19,7 @@ class StatsD implements Reportable
 		);
 		$options = array_merge($defaultOptions, $options);
 		
-		$this->statsDConnection = new \StatsD($options['host'], $options['port']);
+		$this->statsDConnection = new statsd\Connection($options['host'], $options['port']);
 	}
 	
     public function meter($key)
